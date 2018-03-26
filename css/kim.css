@@ -1,0 +1,38 @@
+/*=============================================
+=            Stylesheet Variables            =
+=============================================*/
+
+:root {
+    
+}
+
+
+/*=====  End of Stylesheet Variables  ======*/
+
+
+/*=============================================
+=                    Styles                  =
+=============================================*/
+
+html, body {
+    margin: 0;
+    color: #333;
+    font-family: 'Microsoft YaHei UI Light', sans-serif;
+}
+
+body {
+    
+}
+
+span.blog-title h1 {
+    margin: 0;
+}
+
+footer {
+    width: 100%;
+    background: #70f;
+    color: #fff;
+}
+
+
+/*=============  End of Styles  ===========*/
