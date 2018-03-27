@@ -14,6 +14,11 @@
  * @link       localhost/wordpress
  */
 ?>
-<div id="sidebar" class="widgets-area">
+<div id="sidebar">
+    <div id="sidebar-project" class="sidebar">
+    <?php dynamic_sidebar('sidebar-project');?>
+    </div>
+    <div id="sidebar-navigation" class="sidebar widgets-area">
     <?php dynamic_sidebar('sidebar-1');?>
+    </div>
 </div>

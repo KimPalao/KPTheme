@@ -65,6 +65,18 @@ function Kim_Widget_setup() {
             'after-title'   => '</h2>',
         )
     );
+    register_sidebar(
+        array(
+            'name'          => 'Project',
+            'id'            => 'sidebar-project',
+            'class'         => 'custom' ,
+            'description'   => 'A sidebar for showing my current project',
+            'before-widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after-widget'  => '</aside>',
+            'before-title'  => '<h2 class="widget-title">',
+            'after-title'   => '</h2>',
+        )
+    );
 }
 
 add_action('widgets_init', 'Kim_Widget_setup');

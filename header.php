@@ -24,12 +24,14 @@
         <title><?php wp_title();?></title>
     </head>
     <body <?php body_class();?>>
-    <?php wp_nav_menu(array('theme_location' => 'primary'));?>
 
-    <!-- WordPress header implementation -->
+    <header>
+        <!-- This one will use the photo as is. -->
+        <!-- <img src="<?php header_image()?>" width="<?php echo get_custom_header()->width;?>" height="<?php echo get_custom_header()->height;?>" alt=""> -->
 
-    <!-- This one will use the photo as is. -->
-    <!-- <img src="<?php header_image()?>" width="<?php echo get_custom_header()->width;?>" height="<?php echo get_custom_header()->height;?>" alt=""> -->
-
-    <!-- This one will set the width of the header to 100% of screen width. The height will scale down to fit -->
-    <img src="<?php header_image()?>" width="100%" alt="">
+        <!-- This one will set the width of the header to 100% of screen width. The height will scale down to fit -->
+        <img src="<?php header_image()?>" width="100%" alt="" class="header-image">
+        <!-- WordPress header implementation -->
+        <?php wp_nav_menu(array('theme_location' => 'primary'));?>
+    </header>
+    <div id="main-body">

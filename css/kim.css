@@ -3,7 +3,11 @@
 =============================================*/
 
 :root {
-    
+    --main-theme-color: #4CAF50;
+    --theme-background-color: #A5D6A7;
+    --theme-accent-color: #7C4DFF;
+    --theme-accent-shadow: #311B92;
+    --main-font-color: #333;
 }
 
 
@@ -16,23 +20,155 @@
 
 html, body {
     margin: 0;
-    color: #333;
+    color: var(--main-font-color);
     font-family: 'Microsoft YaHei UI Light', sans-serif;
 }
 
-body {
-    
+
+/*=============================================
+=                Header block                =
+=============================================*/
+
+header {
+    margin-bottom: 30px;
 }
+
+header img.header-image {
+    display: inherit;
+}
+
+div.menu-main-navigation-container ul {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 10px 0;
+    background: var(--main-theme-color);
+    box-shadow: 0 1px 3px var(--theme-accent-shadow);
+    text-align: center;
+}
+
+div.menu-main-navigation-container ul li {
+    display: inline-block;
+    color: #fff;
+}
+
+div.menu-main-navigation-container ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+/*=====      End of Header block      ======*/
+
 
 span.blog-title h1 {
     margin: 0;
 }
 
-footer {
-    width: 100%;
-    background: #70f;
+body {
+    background: var(--theme-background-color);
+}
+
+#main-body {
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*=============================================
+=              Blog Post Section              =
+=============================================*/
+
+div#post-container {
+    flex-grow: 1;
+}
+
+div.post {
+    /* outline: 1px solid black; */
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+div.post-calendar {
+    min-width: 75px;
+    height: 75px;
+    text-align: center;
+    /* box-shadow: 0 1px 15px #666; */
+    box-shadow: 1px 1px 5px var(--theme-accent-shadow);
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    background: #fff;
+}
+
+div.post-month {
+    background: var(--theme-accent-color);
     color: #fff;
 }
+
+div.post-date {
+    flex-grow: 1;
+    vertical-align: middle;
+    position: relative;
+}
+
+div.post-date > * {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.post-content {
+    box-shadow: 1px 1px 5px var(--theme-accent-shadow);
+    padding: 20px;
+    flex-grow: 1;
+    background: #fff;
+}
+
+div.post-content div.post-header .post-title {
+    margin: 0;  
+}
+
+/*=====    End of Blog Post Section    ======*/
+
+
+
+/*=============================================
+=               Sidebar Section               =
+=============================================*/
+
+div.sidebar {
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 1px var(--theme-accent-shadow);
+}
+
+div.sidebar li:first-of-type .widgettitle {
+    margin-top: 0;
+}
+
+li.widget {
+    list-style: none;
+}
+
+/*=====     End of Sidebar Section     ======*/
+
+
+
+footer {
+    width: 100%;
+    background: var(--main-theme-color);
+    color: #fff;
+}
+
 
 
 /*=============  End of Styles  ===========*/

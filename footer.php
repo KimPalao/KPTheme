@@ -14,6 +14,7 @@
  * @link       localhost/wordpress
  */
 ?>
+        </div>
         <footer>
             &copy; Kim Palao 2018
             <?php wp_nav_menu(array('theme_location' => 'secondary')) ?>
