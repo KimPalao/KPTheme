@@ -36,11 +36,7 @@ get_header();?>
                 </div>
                 <div class="post-content">
                     <div class="post-header">
-                        <a href="<?php the_permalink();?>" class="post-link">
-                            <h2 class="post-title">
-                                <?php the_title();?>
-                            </h2>
-                        </a>
+                        <h2 class="post-title"><?php the_title();?></h2>
                         <small>Posted on <?php the_time('F j, Y');?> at <?php the_time('h:i A');?></small>
                     </div>
                     <hr>
@@ -60,6 +56,11 @@ get_header();?>
                     </div>
                 </div>
             </div>
+            <?php
+            if (comments_open()):
+                comments_template();
+            endif;
+            ?>
         <?php
         endwhile;
     endif;

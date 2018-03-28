@@ -5,9 +5,15 @@
 :root {
     --main-theme-color: #4CAF50;
     --theme-background-color: #A5D6A7;
+    --theme-color-dark: #1B5E20;
     --theme-accent-color: #7C4DFF;
     --theme-accent-shadow: #311B92;
     --main-font-color: #333;
+
+    --social-media-facebook: #3b5998;
+    --social-media-linkedin: #007bb6;
+    --social-media-github: #171516;
+
 }
 
 
@@ -37,12 +43,73 @@ header img.header-image {
     display: inherit;
 }
 
+div.header-navigation-wrapper {
+    background: var(--main-theme-color);
+    display: flex;
+    box-shadow: 0 1px 3px var(--theme-accent-shadow);
+    justify-content: center;
+}
+
+div.menu-main-navigation-container {
+    margin-right: 20px;
+}
+
+div.menu-main-navigation-container ul li::after {
+    content: '|';
+    font-size: 16px;
+}
+
+
+/*----------  Search Form  ----------*/
+
+div.header-navigation-search {
+    position: relative;
+}
+
+div.header-navigation-search form {
+    position: absolute;
+    /* top: 50%;
+    transform: translateY(-50%); */
+    bottom: 20%;
+    display: flex;
+}
+
+#search {
+    /* border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 3px 6px;
+    border: 2px solid var(--theme-color-dark); */
+    background: inherit;
+    border: none;
+    border-bottom: 1px solid #999;
+    transition: 500ms;
+    outline: none;
+    font-size: 16px;
+}
+
+#search:focus, #search:focus + .search-submit {
+    border-bottom: 1px solid black;
+}
+
+.search-submit {
+    /* border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 3px 6px 3px 3px;
+    border: 2px solid var(--theme-color-dark);
+    border-left: none;
+    background: var(--main-theme-color); */
+    transition: 500ms;
+    background: inherit;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid #999;
+}
+
+
 div.menu-main-navigation-container ul {
     margin: 0;
     box-sizing: border-box;
     padding: 10px 0;
-    background: var(--main-theme-color);
-    box-shadow: 0 1px 3px var(--theme-accent-shadow);
     text-align: center;
 }
 
@@ -98,6 +165,7 @@ div.post-calendar {
     height: 75px;
     text-align: center;
     /* box-shadow: 0 1px 15px #666; */
+    border-radius: 5px;
     box-shadow: 1px 1px 5px var(--theme-accent-shadow);
     display: flex;
     flex-direction: column;
@@ -106,6 +174,8 @@ div.post-calendar {
 }
 
 div.post-month {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     background: var(--theme-accent-color);
     color: #fff;
 }
@@ -116,7 +186,7 @@ div.post-date {
     position: relative;
 }
 
-div.post-date > * {
+div.post-date .post-date-heading {
     margin: 0;
     position: absolute;
     top: 50%;
@@ -125,10 +195,21 @@ div.post-date > * {
 }
 
 div.post-content {
+    border-radius: 5px;
     box-shadow: 1px 1px 5px var(--theme-accent-shadow);
     padding: 20px;
     flex-grow: 1;
     background: #fff;
+}
+
+div.post-content div.post-header a.post-link {
+    text-decoration: none;
+    color: #000;
+    transition: 200ms;
+}
+
+div.post-content div.post-header a.post-link:hover {
+    color: var(--theme-accent-color);
 }
 
 div.post-content div.post-header .post-title {
@@ -145,6 +226,7 @@ div.post-content div.post-header .post-title {
 
 div.sidebar {
     background: #fff;
+    border-radius: 5px;
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 10px;
@@ -159,15 +241,75 @@ li.widget {
     list-style: none;
 }
 
+
+
 /*=====     End of Sidebar Section     ======*/
 
 
+/*=============================================
+    =            Footer Block                =
+=============================================*/
 
 footer {
     width: 100%;
     background: var(--main-theme-color);
     color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
 }
+
+
+/*----------  Font Awesome Styles  ----------*/
+
+ul.social-links {
+    list-style-type: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+footer li.social-link {
+    background: var(--theme-color-dark);
+    border-radius: 100%;
+}
+
+footer li.social-link:not(:last-child) {
+    margin-right: 10px;
+}
+
+footer li.social-link:hover {
+    transform: rotate(360deg);
+    transition: 500ms;
+}
+
+footer li.social-link-facebook:hover {
+    background: var(--social-media-facebook);
+}
+footer li.social-link-linkedin:hover {
+    background: var(--social-media-linkedin);
+}
+footer li.social-link-github:hover {
+    background: var(--social-media-github);
+}
+
+footer li a {
+    --dimension: 40px;
+    color: #fff;
+    display: inline-block;
+    width: var(--dimension);
+    height: var(--dimension);
+    line-height: var(--dimension);
+    font-size: 20px;
+    text-align: center;
+}
+
+/*=====      End of Footer Block      ======*/
+
+
+
+
 
 
 

@@ -32,6 +32,11 @@
         <!-- This one will set the width of the header to 100% of screen width. The height will scale down to fit -->
         <img src="<?php header_image()?>" width="100%" alt="" class="header-image">
         <!-- WordPress header implementation -->
-        <?php wp_nav_menu(array('theme_location' => 'primary'));?>
+        <div class="header-navigation-wrapper">
+            <?php wp_nav_menu(array('theme_location' => 'primary'));?>
+            <div class="header-navigation-search">
+                <?php get_search_form();?>
+            </div>
+        </div>
     </header>
     <div id="main-body">

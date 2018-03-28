@@ -16,8 +16,18 @@
 ?>
         </div>
         <footer>
-            &copy; Kim Palao 2018
-            <?php wp_nav_menu(array('theme_location' => 'secondary')) ?>
+            <span>
+                &copy; Kim Palao 2018 <br>
+                Connect with me through these social media networks:
+                <br><br>
+            </span>
+            <?php 
+            $args = array(
+                'theme_location' => 'social',
+                'menu_class' => 'social-links',
+            );
+            wp_nav_menu($args); 
+            ?>
         </footer>
 
     <?php wp_footer();?>

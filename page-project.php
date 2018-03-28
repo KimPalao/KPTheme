@@ -1,9 +1,7 @@
 <?php
 /**
- * Index
- * 
- * Index file for the theme
- * 
+ * Template Name: Project
+ *
  * PHP version 7.2.0
  *
  * @category   Components
@@ -17,14 +15,6 @@
 get_header();?>
     <div id="post-container">
     <?php
-    // $query = array(
-    //     'type' => 'post'
-    // );
-    // foreach ($_GET as $key => $value) {
-    //     $args[$key] = $value;
-    // }
-    // var_dump($query);
-    // $posts = new WP_Query($query);
     if (have_posts()) :
         while (have_posts()): the_post();?>
             <div class="post <?php echo get_post_format() ? get_post_format() : 'standard';?>">
