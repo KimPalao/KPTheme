@@ -4,11 +4,13 @@
 
 :root {
     --main-theme-color: #4CAF50;
+    --theme-background-color: #eeeeee;
     --theme-background-color: #A5D6A7;
     --theme-color-dark: #1B5E20;
     --theme-accent-color: #7C4DFF;
     --theme-accent-shadow: #311B92;
     --main-font-color: #333;
+
 
     --social-media-facebook: #3b5998;
     --social-media-linkedin: #007bb6;
@@ -34,6 +36,100 @@ html, body {
 /*=============================================
 =                Header block                =
 =============================================*/
+
+#modal-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 1;
+    transition: 200ms;
+    opacity: 1;
+}
+
+#modal-container.hide {
+    /* opacity: 0;
+    z-index: -10; */
+    width: 0;
+    height: 0;
+}
+
+#modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 5px solid #fff;
+    box-shadow: inset 1px 1px #999;
+    transition: 150ms;
+}
+
+
+#modal img {
+    max-width: 100%;
+}
+
+#modal.landscape {
+    max-width: 90%;
+}
+
+
+
+#modal-close {
+    --padding: 7px;
+    position: absolute;
+    right: 0;
+    padding: var(--padding) var(--padding) calc(var(--padding) * 2) calc(var(--padding) * 2);
+    border-bottom-left-radius: 100%;
+    font-size: 20px;
+    background: #999;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#modal-close:hover {
+    transition: 200ms;
+    background: #333;
+}
+
+
+#modal-link {
+    color: #fff;
+    font-size: 20px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-decoration: none;
+    padding: 3px;
+    box-sizing: border-box;
+    text-shadow: 1px 1px 2px #000,
+                 1px -1px 2px #000,
+                 -1px 1px 2px #000,
+                 -1px -1px 2px #000;
+    z-index: 2;
+}
+
+#modal-link-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: linear-gradient(to top,rgba(0,0,0, .5) 0%, rgba(144, 144, 144, .5) 10%, rgba(255,255,255,0) 100%);
+}
+
+#modal-link:hover + #modal-link-background {
+    opacity: 1;
+    transition: 200ms;
+}
+
+
+
+#modal.portrait {
+    max-height: 90%;
+}
 
 header {
     margin-bottom: 30px;

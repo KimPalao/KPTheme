@@ -24,7 +24,13 @@
         <title><?php wp_title();?></title>
     </head>
     <body <?php body_class();?>>
-
+    <div id="modal-container" class="hide">
+        <div id="modal">
+            <i id="modal-close" class="fas fa-times"></i>
+            <a href="" id="modal-link" target="_blank"></a>
+            <div id="modal-link-background"></div>
+        </div>
+    </div>
     <header>
         <!-- This one will use the photo as is. -->
         <!-- <img src="<?php header_image()?>" width="<?php echo get_custom_header()->width;?>" height="<?php echo get_custom_header()->height;?>" alt=""> -->

@@ -1,8 +1,11 @@
 //javascript functions
-
+/* 
 /**
  * @type {Element}
  */
+
+const $ = jQuery;
+
 var root = document.querySelector(':root');
 
 /**
@@ -35,3 +38,51 @@ function invert() {
     }
     def = !def;
 }
+
+$(document).ready(() => {
+    $('img').on('click', event => {
+        event.preventDefault();
+        console.log(event.target);
+        var src = $(event.target).attr('src').replace(/-[0-9]+x[0-9]+\.png$/i, '.png');
+        console.log(src);
+        $('#modal-container').removeClass('hide');
+        var img = document.createElement('img');
+        img.src = src;
+        img.srcset = $(event.target).attr('srcset');
+        img.classList.add('hide');
+
+        $('#modal').append($(img));
+        $('#modal-link').attr('href', src);
+
+        var text = src.split('/')[src.split('/').length-1];
+        console.log(text);
+        $('#modal-link').text(text);
+
+        $(img).on('load', event => {
+            img.classList.remove('hide');
+            if ($('#modal').width() > $('#modal-image').height()) {
+                $('#modal').removeClass('portrait');
+                $('#modal').addClass('landscape');
+            } else {
+                $('#modal').removeClass('landscape');
+                $('#modal').addClass('portrait');            
+            }
+        })
+
+        console.log($('#modal-image').width() > $('#modal-image').height());
+    });
+
+    $('#modal-container, #modal-close').on('click', event => {
+        if ($('#modal-container').hasClass('hide')) {
+            return;
+        }
+        console.log('closing');
+        $('#modal-container').addClass('hide');
+        $('#modal img').remove();
+    });
+
+    $('#modal-container *:not(#modal-close)').on('click', event => {
+        event.stopPropagation();
+    });
+
+});
